@@ -1,0 +1,46 @@
+      <h1 class ="formHeader">Employee Registration Form </h1>
+      <div id="employeeFormDiv" >
+      <form #employeeForm="ngForm" (ngSubmit)="register(employeeForm)">
+       
+            <div class="form-group">
+               <label for="firstName">First Name: </label>
+                <input type="text" id ="firstName" class="form-control" placeholder="Enter First Name" name="firstName" required [ngModel]="employee.firstName" #firstName="ngModel" >
+                <div *ngIf="employeeForm.submitted && !firstName.valid" class="help-block">First Name is required</div>
+            </div>
+          <div class="form-group">
+              <label for="lastName">Last Name:</label>
+              <input type="text" id ="lastName" class="form-control" placeholder="Enter Last Name" name="lastName"  [ngModel]="employee.lastName" #lastName="ngModel">
+                <div *ngIf="employeeForm.submitted && !firstName.valid" class="help-block">Last Name is required</div>
+          </div>
+          <div class="form-group">
+              <label for="dateOfBirth">Date Of Birth:</label>
+              <input type="date" id ="dateOfBirth" class="form-control" placeholder="Enter Date Of Birth" name="dateOfBirth"  [ngModel]="employee.dateOfBirth" #dateOfBirth="ngModel">
+              <div *ngIf="employeeForm.submitted && !firstName.valid" class="help-block">Date of Birth is required</div>
+          </div>
+           <div class="form-group">
+              <label for="gender">Gender:</label>
+              <div class="radio">
+              <input type="radio" value="male" name="gender"  [ngModel]="employee.gender" required #gender="ngModel"> Male
+              <input type="radio" value="female" name ="gender" [ngModel]="employee.gender" required #gender="ngModel"> Female
+              <div *ngIf="employeeForm.submitted && !firstName.valid" class="help-block">Gender is required</div>
+              </div>
+          </div>
+          <div class="form-group">   
+              <label for="dept">Department:</label>
+              <input type="text" id ="dept" class="form-control" placeholder="Enter your Department Name" name="dept"  [ngModel]="employee.dept" #dept="ngModel">
+              <div *ngIf="employeeForm.submitted && !firstName.valid" class="help-block">Department is required</div>
+          </div>
+         
+
+           <div class="form-group"> 
+                <button>Register</button>
+                <button type="button" (click)="resetForm(employeeForm)">Reset</button>	
+                  <a routerLink="/allEmployees">Click Here</a><label id="termsLabel"> to Get Registered Employees</label>	  
+            </div>
+             <p class="formSucces" *ngIf="isFormSubmitted" [ngClass] = "'success'">
+                Form submitted successfully.
+            </p>
+      </form>
+     
+    </div>
+   

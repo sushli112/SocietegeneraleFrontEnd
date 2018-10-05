@@ -1,0 +1,20 @@
+#employeeFormDiv{
+    display : flex;
+    justify-content :center;
+
+}
+.formHeader,.formSucces{
+    display: flex;
+    justify-content: center;
+    padding-bottom: 20px;
+        padding-top: 5%
+}
+#fcheckbox{
+     margin-right: 10px;
+}
+#termsLabel{
+margin-left :5px;
+}
+.formSucces{
+    color:green;
+}

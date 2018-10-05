@@ -1,0 +1,20 @@
+<h1 class ="formHeader">Registered Employee Details </h1>
+      <div id="employeeDetailsDiv">
+    
+        <table>
+         <tr class ="trow">
+           	 <th class ="theader">First Name</th>
+             <th class ="theader">Last Name</th>
+              <th class ="theader">Gender</th>
+               <th class ="theader">Date Of Birth</th>
+                <th class ="theader">Department</th>
+        </tr>
+          <tr class ="trow" *ngFor="let employee of employeesList"> 
+           	<td class ="tbody">{{employee.firstName}}</td>
+            <td class ="tbody">{{employee.lastName}}</td>
+            <td class ="tbody">{{employee.gender}}</td>
+            <td class ="tbody">{{employee.dateOfBirth}}</td>
+            <td class ="tbody">{{employee.dept}}</td>
+            </tr>
+          </table>
+    </div>
